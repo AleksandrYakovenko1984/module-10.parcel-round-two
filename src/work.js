@@ -49,40 +49,18 @@ document.querySelector('body').classList.remove(DARK)
 })
 
 
-
-// document.querySelector(body).classList.toggle(DARK)
-// document.querySelector(body).classList.toggle(LIGHT)
-// let themes = e.target.checked ? DARK : LIGHT
-
-// localStorage.setItem('theme', themes)
-
-
-// if (!theme) {
-//     theme === LIGHT
-//     localStorage.setItem('theme', theme)
-    
-    
-// }
-// document.querySelector(body).classList.add(theme)
-// btn.checked = theme === LIGHT ? false : true
-
-if (theme === LIGHT) {
-    btn.checked = false
-    document.querySelector('body').classList.add(LIGHT)
-} else {
+if (theme === DARK) {
     btn.checked = true
-    document.querySelector('body').classList.remove(LIGHT)
+ document.querySelector('body').classList.remove(LIGHT)
     document.querySelector('body').classList.add(DARK)
 
-}
-// if (theme) {
-//     document.querySelector('body').classList.add(LIGHT)
+    
+} else {
+    btn.checked = false
+   document.querySelector('body').classList.add(LIGHT)
 
-//     btn.checked === true
-// } else {
-//     document.querySelector('body').classList.remove(LIGHT)
-//     btn.checked === false
-// }
+}
+
 
 
 
