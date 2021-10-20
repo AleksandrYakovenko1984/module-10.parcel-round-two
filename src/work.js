@@ -28,19 +28,25 @@ const Theme = {
 const {LIGHT, DARK} = Theme
 console.log(btn.checked);
 
+
 let theme = localStorage.getItem('theme')
 console.log(theme);
 
 btn.addEventListener('change', (e) => {
     console.log(e.target.checked);
-    if (e.target.checked) {
-        document.querySelector('body').classList.add(DARK)
-        localStorage.setItem('theme', DARK)
+    if (!e.target.checked) {
+        document.querySelector('body').classList.add(LIGHT)
+document.querySelector('body').classList.remove(DARK)
+        localStorage.setItem('theme', LIGHT)
+
     } else {
-          document.querySelector('body').classList.remove(DARK)
-        localStorage.removeItem('theme', DARK)
+          document.querySelector('body').classList.remove(LIGHT)
+        localStorage.removeItem('theme', LIGHT)
+        document.querySelector('body').classList.add(DARK)
     }
 })
+
+
 
 // document.querySelector(body).classList.toggle(DARK)
 // document.querySelector(body).classList.toggle(LIGHT)
@@ -59,11 +65,11 @@ btn.addEventListener('change', (e) => {
 // btn.checked = theme === LIGHT ? false : true
 
 if (theme) {
-    document.querySelector('body').classList.add(DARK)
+    document.querySelector('body').classList.add(LIGHT)
 
     btn.checked === true
 } else {
-    document.querySelector('body').classList.remove(DARK)
+    document.querySelector('body').classList.remove(LIGHT)
     btn.checked === false
 }
 
