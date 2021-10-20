@@ -32,6 +32,7 @@ console.log(btn.checked);
 let theme = localStorage.getItem('theme')
 console.log(theme);
 
+
 btn.addEventListener('change', (e) => {
     console.log(e.target.checked);
     if (!e.target.checked) {
@@ -43,6 +44,7 @@ document.querySelector('body').classList.remove(DARK)
           document.querySelector('body').classList.remove(LIGHT)
         localStorage.removeItem('theme', LIGHT)
         document.querySelector('body').classList.add(DARK)
+        localStorage.setItem('theme', DARK)
     }
 })
 
@@ -64,14 +66,23 @@ document.querySelector('body').classList.remove(DARK)
 // document.querySelector(body).classList.add(theme)
 // btn.checked = theme === LIGHT ? false : true
 
-if (theme) {
+if (theme === LIGHT) {
+    btn.checked = false
     document.querySelector('body').classList.add(LIGHT)
-
-    btn.checked === true
 } else {
+    btn.checked = true
     document.querySelector('body').classList.remove(LIGHT)
-    btn.checked === false
+    document.querySelector('body').classList.add(DARK)
+
 }
+// if (theme) {
+//     document.querySelector('body').classList.add(LIGHT)
+
+//     btn.checked === true
+// } else {
+//     document.querySelector('body').classList.remove(LIGHT)
+//     btn.checked === false
+// }
 
 
 
